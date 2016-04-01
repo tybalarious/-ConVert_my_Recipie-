@@ -46,9 +46,9 @@ angular.module('app.routes', [])
     url: '/Signup',
     templateUrl: 'templates/signup.html',
     controller: 'signupCtrl'
-  })
+  });
 
-$urlRouterProvider.otherwise('/page5')
+$urlRouterProvider.otherwise('/page5');
 
   
 
