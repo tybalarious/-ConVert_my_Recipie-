@@ -21,4 +21,4 @@ angular.module('app', ['ionic','firebase-utilities', 'app.routes',  'app.directi
       StatusBar.styleDefault();
     }
   });
-})
+});
