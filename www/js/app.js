@@ -5,6 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 angular.module('app', ['ionic','firebase-utilities', 'app.routes',  'app.directives','homeCtrl','ingredientsCtrl','loginCtrl','signupCtrl'])
+    .constant('ApiEndpoint', {
+      url: 'http://localhost:8100/api'
+    })
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
