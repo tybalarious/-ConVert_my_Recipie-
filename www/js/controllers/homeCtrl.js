@@ -9,13 +9,13 @@ function homeCtrl($http){
     hc.searchItems = searchItems;
 
     function searchItems(){
-        $http.get('http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3').then(function(resp) {
-            console.log('Success', resp);
-            // For JSON responses, resp.data contains the result
-        }, function(err) {
-            console.error('ERR', err);
-            // err.status will contain the status code
-        })
+        $http.get('/api/recipes/').success(function (data) {
+            hc.itemNames = [];
+            for(var i = 0; i < 10; i++){
+                hc.itemNames.push(data.results[i].title);
+            }
+               console.log();
+             });
     }
 
 
