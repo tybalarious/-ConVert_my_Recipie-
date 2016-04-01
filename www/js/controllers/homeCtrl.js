@@ -16,6 +16,7 @@ function homeCtrl($http){
                 console.log(data);
                 console.log('here' + i);
                 console.log(hc.mealData);
+
             }
 
              });
