@@ -9,6 +9,8 @@
                 <a  id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
                 <div ng-repeat="i in hc.mealData track by $index">
                     <h1 ng-bind="hc.mealData[$index].title"></h1>
+                    <img ng-src="hc.mealData[$index].thumbnail"/>
+
 
                 </div>
 
