@@ -1,8 +1,8 @@
 {
-  "name": "app",
-  "app_id": "",
-  "proxies": [{
-  "path": "/api/recipes",
-  "proxyUrl": "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
+   "name": "app",
+   "app_id": "",
+   "proxies": [{
+   "path": "/api/recipes",
+    "proxyUrl": "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
   }]
 }
