@@ -1,18 +1,20 @@
-<ion-view title="Login" id="page5">
+<ion-view title="Login" id="page5" ng-controller="loginCtrl as lc">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <form class="list">
             <ion-list>
                 <label class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="" ng-model="lc.theirEmail" required>
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="">
+                    <input type="password" placeholder="" ng-model="lc.theirPass" required>
                 </label>
             </ion-list>
-            <div class="spacer" style="height: 40px;"></div>
-            <a ui-sref="tabsController.home" id="login-button1" class="button button-positive  button-block">Log in</a>
+            <div class="spacer" style="height: 40px;">
+                <!--ui-sref="tabsController.home"-->
+                <a ng-click="lc.login(lc.theirEmail, lc.theirPass)" class="button button-positive  button-block">Login</a>
+                <a ng-click="lc.loginWithFb()" class="button button-positive  button-block">Log in with FB</a>
             <a ui-sref="signup" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
         </form>
     </ion-content>
