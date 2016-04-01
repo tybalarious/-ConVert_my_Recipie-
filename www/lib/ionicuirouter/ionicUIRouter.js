@@ -39,7 +39,7 @@ function($provide, $stateProvider) {
     $state.go = function(to, params, options){
         to = checkState(to, $state);
         return $state.__go(to, params, options);
-    }
+    };
 
     return $state;
 
