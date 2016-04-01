@@ -1,4 +1,8 @@
 {
-  "name": "[ConVert_my_Recipie]",
-  "app_id": ""
+  "name": "app",
+  "app_id": "",
+  "proxies": [{
+  "path": "/api/recipes",
+  "proxyUrl": "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
+  }]
 }
