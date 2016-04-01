@@ -6,11 +6,17 @@
                     <span class="input-label">Type in your Ingredients</span>
                     <input type="text" placeholder="" ng-model="hc.theirIngredients" required>
                 </label>
-                <a  class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
-                <p ng-repeat="i in hc.mealData track by $index" ng-model="hc.mealData[0].results[0].title"></p>
+                <a  id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
+                <div ng-repeat="i in hc.mealData track by $index">
+                    <h1 ng-bind="hc.mealData[$index].title"></h1>
+                    <img ng-src="hc.mealData[$index].thumbnail"/>
+
+
+                </div>
 
             </div>
         </form>
     </ion-content>
     <!--<img src="../img/Good_Food_Display_-_NCI_Visuals_Online.jpg" width="100%" height="25%">-->
 </ion-view>
+
