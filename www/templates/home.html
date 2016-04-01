@@ -7,7 +7,7 @@
                     <input type="text" placeholder="" ng-model="hc.theirIngredients" required>
                 </label>
                 <a  class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
-                <p ng-repeat=""></p>
+                <p ng-repeat="i in hc.mealData track by $index" ng-model="hc.mealData[0].results[0].title"></p>
 
             </div>
         </form>

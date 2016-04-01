@@ -7,16 +7,20 @@ angular.module('homeCtrl', [])
 function homeCtrl($http){
     var hc = this;
     hc.searchItems = searchItems;
-
+    hc.mealData = [];
     function searchItems(){
         $http.get('/api/recipes/').success(function (data) {
-            hc.itemNames = [];
+
             for(var i = 0; i < 10; i++){
-                hc.itemNames.push(data.results[i].title);
+                hc.mealData.push(data);
+                console.log(data);
+                console.log('here' + i);
+                console.log(hc.mealData);
             }
-               console.log();
+
              });
     }
+
 
 
 }
