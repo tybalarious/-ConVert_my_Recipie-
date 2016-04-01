@@ -10,14 +10,13 @@ function homeCtrl($http){
     hc.mealData = [];
     function searchItems(){
         $http.get('/api/recipes/').success(function (data) {
-
+            document.getElementById('searchItems').disabled = 'true';
             for(var i = 0; i < 10; i++){
-                hc.mealData.push(data);
-                console.log(data);
-                console.log('here' + i);
-                console.log(hc.mealData);
+                hc.mealData.push(data.results[i]);
+
 
             }
+            console.log(hc.mealData);
 
              });
     }

@@ -6,8 +6,8 @@
                     <span class="input-label">Type in your Ingredients</span>
                     <input type="text" placeholder="" ng-model="hc.theirIngredients" required>
                 </label>
-                <a  class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
-                <p ng-repeat="i in hc.mealData track by $index" ng-bind="hc.mealData[0].href"></p>
+                <a  id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
+                <div ng-repeat="i in hc.mealData track by $index" ng-bind="hc.mealData[$index].title"></div>
 
             </div>
         </form>
