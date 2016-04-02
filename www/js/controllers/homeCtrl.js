@@ -9,7 +9,7 @@ function homeCtrl($http){
     hc.searchItems = searchItems;
     hc.mealData = [];
     function searchItems(){
-        $http.get('/api/recipes/').success(function (data) {
+        $http.get('/api/recipes/?i=eggs,milk').success(function (data) {
             document.getElementById('searchItems').disabled = 'true';
             for(var i = 0; i < 10; i++){
                 hc.mealData.push(data.results[i]);

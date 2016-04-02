@@ -19,32 +19,38 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('tabsController.ingredients', {
-    url: '/Ingredients',
+        .state('tabsController.recipes', {
+    url: '/Recipes',
     views: {
       'tab2': {
-        templateUrl: 'templates/ingredients.html',
-        controller: 'ingredientsCtrl'
+        templateUrl: 'templates/recipes.html',
+        controller: 'recipesCtrl'
       }
     }
   })
 
-  .state('tabsController', {
+        .state('tabsController', {
     url: '/page1',
     templateUrl: 'templates/tabsController.html',
     abstract:true
   })
 
-  .state('login', {
+        .state('login', {
     url: '/page5',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
 
-  .state('signup', {
+        .state('signup', {
     url: '/Signup',
     templateUrl: 'templates/signup.html',
     controller: 'signupCtrl'
+  })
+    
+        .state('shoppinglist', {
+    url: '/ShoppingList',
+    templateUrl: 'templates/shoppingList.html',
+    controller: 'shoppingCtrl'
   });
 
 $urlRouterProvider.otherwise('/page5');
