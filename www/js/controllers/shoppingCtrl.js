@@ -9,17 +9,17 @@
         .controller('shoppingCtrl', shoppingCtrl);
 
     function shoppingCtrl($http) {
-        var rc = this;
-        rc.searchItems = searchItems;
-        rc.mealData = [];
+        var sc = this;
+        sc.searchItems = searchItems;
+        sc.mealData = [];
 
         function searchItems() {
-            $http.get('/api/recipes/?q='+rc.theirRecipes).success(function (data) {
-                rc.mealData = [];
+            $http.get('/api/recipes/?q='+sc.theirRecipes).success(function (data) {
+                sc.mealData = [];
                 for(var i = 0; i < 10; i++){
-                    rc.mealData.push(data.results[i]);
+                    sc.mealData.push(data.results[i]);
                 }
-                console.log(rc.mealData);
+                console.log(sc.mealData);
             });
         }
 

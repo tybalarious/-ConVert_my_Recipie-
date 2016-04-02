@@ -13,8 +13,7 @@ angular.module('app.routes', [])
     url: '/Home',
     views: {
       'tab1': {
-        templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
+        templateUrl: 'templates/home.html'
       }
     }
   })
@@ -23,8 +22,7 @@ angular.module('app.routes', [])
     url: '/Recipes',
     views: {
       'tab2': {
-        templateUrl: 'templates/recipes.html',
-        controller: 'recipesCtrl'
+        templateUrl: 'templates/recipes.html'
       }
     }
   })

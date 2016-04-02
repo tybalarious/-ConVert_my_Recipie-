@@ -13,6 +13,8 @@
                         <div class="card">
                             <h3 ng-bind="rc.mealData[$index].title"></h3>
                             <img ng-src="{{rc.mealData[$index].thumbnail}}" alt="" />
+                            <a class="button button-calm" style="float:left;" href="{{rc.mealData[$index].href}}" target="_blank">How to make it:</a>
+
                             <p>Ingredients: <span ng-bind="rc.mealData[$index].ingredients"></span></p>
 
 

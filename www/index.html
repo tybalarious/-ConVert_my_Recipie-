@@ -22,6 +22,7 @@
       <script src="js/controllers/recipesCtrl.js"></script>
       <script src="js/controllers/loginCtrl.js"></script>
       <script src="js/controllers/signupCtrl.js"></script>
+      <script src="js/controllers/shoppingCtrl.js"></script>
       <script src="js/routes.js"></script>
       <script src="js/services/firebase-utilities.js"></script>
       <script src="js/directives.js"></script>
@@ -31,7 +32,7 @@
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
+  <body ng-app="app" animation="slide-left-right-ios7" ng-controller="homeCtrl as hc">
   <div>
       <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
           <ion-side-menu-content>
@@ -49,7 +50,19 @@
               </ion-header-bar>
               <ion-content padding="false" class="side-menu-right has-header">
                   <a ui-sref="login" menu-close="" id="menu-button5" style="font-size:20px;" class="button button-positive  button-block icon-right ion-log-out" data-componentid="button5">Log Out</a>
-                  <a ui-sref="login" menu-close="" id="menu-button6" style="font-size:20px;" class="button button-positive  button-block icon-right ion-ios-cart" data-componentid="button6">Shopping List</a>
+
+                  <!--<h1  style="font-size:20px;"  ng-bind="hc.allAddedIngredients" ng-init="hc.updating()"></h1>-->
+                  <center><h1>Shopping List</h1></center>
+                  <ion-list>
+                      <ion-item ng-repeat="all in hc.allAddedIngredients track by $index">
+                          <div class="row" style="text-align:center; position:relative;">
+                          <a  class="button button-assertive ion-close-round " ng-click="hc.allAddedIngredients.splice($index,1)" </a>
+                          <span  style="font-size:32px; position:absolute; top:25%; right:1%;">{{all}}</span>
+                          </div>
+
+                          <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                      </ion-item>
+                  </ion-list>
               </ion-content>
           </ion-side-menu>
       </ion-side-menus>

@@ -1,4 +1,4 @@
-<ion-view title="shoppingList" id="ShoppingList" ng-controller="shoppingCtrl as rc">
+<ion-view title="ShoppingList" id="ShoppingList" ng-controller="shoppingCtrl as sc">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <form class="list">
             <div class="spacer" style="height: 40px;">
@@ -6,14 +6,14 @@
 
                 <label class="item item-input">
                     <span class="input-label">Search Recipes</span>
-                    <input type="text" placeholder="" ng-model="rc.theirRecipes" required>
+                    <input type="text" placeholder="" ng-model="sc.theirRecipes" required>
                 </label>
-                <a  id="searchItems" class="button button-positive  button-block" ng-click="rc.searchItems()">Search</a>
-                <div ng-repeat="i in rc.mealData track by $index">
+                <a  id="searchItems" class="button button-positive  button-block" ng-click="sc.searchItems()">Search</a>
+                <div ng-repeat="i in sc.mealData track by $index">
                     <div class="card">
-                        <h3 ng-bind="rc.mealData[$index].title"></h3>
-                        <img ng-src="{{rc.mealData[$index].thumbnail}}" alt="" />
-                        <p>Ingredients: <span ng-bind="rc.mealData[$index].ingredients"></span></p>
+                        <h3 ng-bind="sc.mealData[$index].title"></h3>
+                        <img ng-src="{{sc.mealData[$index].thumbnail}}" alt="" />
+                        <p>Ingredients: <span ng-bind="sc.mealData[$index].ingredients"></span></p>
 
 
                     </div>

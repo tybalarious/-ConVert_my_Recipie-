@@ -1,4 +1,4 @@
-<ion-view title="Home" id="page2" ng-controller="homeCtrl as hc">
+<ion-view title="Home" id="page2"  ng-init="junk = [' yo']">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <form class="list" >
             <div class="spacer" style="height: 40px;">
@@ -13,25 +13,27 @@
                         <input  id="ingredientInput" type="text"  placeholder="Type in your Ingredients" ng-model="hc.theirIngredients" required>
                     </div>
                 </label>
-                <p>Ingredients so far: <span ng-repeat="input in hc.inputs">{{input}}{{$last ? '' : ', '}} </span></p>
+                <p>Ingredients so far: <span  ng-repeat="input in hc.inputs">{{input}}{{$last ? '' : ', '}} </span></p>
                 <a  id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
                 <div ng-repeat="i in hc.mealData track by $index">
                     <div class="card">
                     <div>
                         <h3 ng-bind="hc.mealData[$index].title" style="float:left;"></h3>
                                         </div><br>
-                        <div style="float:left; position:relative;" class="card">
-                            <p style="float:right;"><strong>Ingredients:</strong> <span ng-bind="hc.mealData[$index].ingredients"></span></p>
+                        <!--<div style="float:left; position:relative;" class="card">-->
+                        <p  style="float:right;"><strong>Ingredients:</strong> <span class="button button-balanced"   ng-bind="hc.mealData[$index].ingredients"></span></p>
+                        <a  class="button button-positive ion-plus" style="float:left;" ng-click="junk.push(hc.addedIngredients); hc.addMissingIngredients(hc.addedIngredients)"></a>
+                        <label class="item item-input">
+                            <div style="overflow: hidden; padding-right: .5em;">
+                                <input  style="font-size:12px;" type="text"  placeholder="Add in missing ingredients" ng-model="hc.addedIngredients" required>
+                            </div>
+                        </label>
 
-                            <a class="button button-calm" style="float:left;" href="{{hc.mealData[$index].href}}" target="_blank">How to make it:</a>
+                        <a class="button button-calm" style="float:left;" href="{{hc.mealData[$index].href}}" target="_blank">How to make it:</a>
                         </div>
-
                         <img ng-src="{{hc.mealData[$index].thumbnail}}" alt="" style="float:right;"/>
-
-
-
                     </div>
-                </div>
+                <!--</div>-->
 
             </div>
         </form>
