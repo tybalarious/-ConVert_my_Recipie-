@@ -3,7 +3,7 @@
  */
 angular.module('signupCtrl', [])
     .controller('signupCtrl',signupCtrl);
-function signupCtrl($state){
+function signupCtrl($state, $scope){
     var sc = this;
     sc.signingUp = signingUp;
     function signingUp(theirName,theirEmail, theirPass){
@@ -13,7 +13,8 @@ function signupCtrl($state){
             password : theirPass
         }, function(error, userData) {
             if (error) {
-                console.log("Error creating user:", error);
+                error = "Error creating user:"+ error;
+                $scope.err = error;
             } else {
                 console.log("Successfully created user account with uid:", userData.uid);
                 ref.authWithPassword({
