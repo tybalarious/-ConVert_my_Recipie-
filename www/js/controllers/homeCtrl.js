@@ -3,7 +3,7 @@
  */
 angular.module('homeCtrl', [])
     .controller('homeCtrl', homeCtrl);
-function homeCtrl($http,$scope){
+function homeCtrl($http,$scope,$ionicPopup){
     var hc = this;
     hc.searchItems = searchItems;
     hc.mealData = [];
@@ -20,9 +20,13 @@ function homeCtrl($http,$scope){
     //function updating(){
     //    $scope.$apply();
     //}
+
     function addMissingIngredients(theirAddedIngredients){
         hc.allAddedIngredients.push(theirAddedIngredients);
+        alert();
+        document.getElementById('missing').value = '';
         $scope.$apply();
+
     }
 
     function init(theIndex,ingredients){
@@ -43,8 +47,16 @@ function homeCtrl($http,$scope){
     }
 
     function addInputs(theirIngredients){
-        hc.inputs.push(theirIngredients);
-        document.getElementById("ingredientInput").value = '';
+        if(theirIngredients){
+            hc.inputs.push(theirIngredients);
+            hc.theirIngredients = null;
+            document.getElementById("ingredientInput").value = '';
+        }
+        else{
+            document.getElementById("ingredientInput").value = '';
+        }
+
+
     }
     function searchItems(){
 

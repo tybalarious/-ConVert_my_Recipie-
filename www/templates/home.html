@@ -1,15 +1,13 @@
 <ion-view title="Home" id="page2"  ng-init="junk = [' yo']">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form class="list">
+        <form class="list" ng-submit="hc.addInputs(hc.theirIngredients)">
             <div class="spacer" style="height: 40px;">
 
 
-                <!--< ng-repeat="input in hc.inputs track by $index">-->
-                <a class="button button-positive ion-plus" style="float:left;"
+                <a class="button button-positive  ion-plus" style="float:left;"
                    ng-click="hc.addInputs(hc.theirIngredients)"></a>
                 <a class="button button-assertive ion-close-round" style="float:left;"
                    ng-click="hc.deleteIngredients()"></a>
-
                 <label class="item item-input">
                     <div style="overflow: hidden; padding-right: .5em;">
                         <input id="ingredientInput" type="text" placeholder="Type in your Ingredients"
@@ -25,13 +23,6 @@
                                         </div><br>
                         <!--<div style="float:left; position:relative;" class="card">-->
                         <p  style="float:right;"><strong>Ingredients:</strong> <span class="button button-balanced"   ng-bind="hc.mealData[$index].ingredients"></span></p>
-                        <a  class="button button-positive ion-plus" style="float:left;" ng-click="junk.push(hc.addedIngredients); hc.addMissingIngredients(hc.addedIngredients)"></a>
-                        <label class="item item-input">
-                            <div style="overflow: hidden; padding-right: .5em;">
-                                <input  style="font-size:12px;" type="text"  placeholder="Add in missing ingredients" ng-model="hc.addedIngredients" required>
-                            </div>
-                        </label>
-
                         <a class="button button-calm" style="float:left;" href="{{hc.mealData[$index].href}}" target="_blank">How to make it:</a>
                         </div>
                         <img ng-src="{{hc.mealData[$index].thumbnail}}" alt="" style="float:right;"/>
