@@ -1,35 +1,42 @@
 <ion-view title="Home" id="page2" ng-controller="homeCtrl as hc">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form class="list" >
+        <form class="list">
             <div class="spacer" style="height: 40px;">
 
 
                 <!--< ng-repeat="input in hc.inputs track by $index">-->
-                    <a  class="button button-positive ion-plus" style="float:left;" ng-click="hc.addInputs(hc.theirIngredients)"></a>
-                    <a  class="button button-assertive ion-close-round" style="float:left;" ng-click="hc.deleteIngredients()"></a>
+                <a class="button button-positive ion-plus" style="float:left;"
+                   ng-click="hc.addInputs(hc.theirIngredients)"></a>
+                <a class="button button-assertive ion-close-round" style="float:left;"
+                   ng-click="hc.deleteIngredients()"></a>
 
                 <label class="item item-input">
                     <div style="overflow: hidden; padding-right: .5em;">
-                        <input  id="ingredientInput" type="text"  placeholder="Type in your Ingredients" ng-model="hc.theirIngredients" required>
+                        <input id="ingredientInput" type="text" placeholder="Type in your Ingredients"
+                               ng-model="hc.theirIngredients" required>
                     </div>
                 </label>
                 <p>Ingredients so far: <span ng-repeat="input in hc.inputs">{{input}}{{$last ? '' : ', '}} </span></p>
-                <a  id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
+                <a id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search
+                    Items</a>
                 <div ng-repeat="i in hc.mealData track by $index">
+
+
                     <div class="card">
-                    <div>
-                        <h3 ng-bind="hc.mealData[$index].title" style="float:left;"></h3>
-                                        </div><br>
-                        <div style="float:left; position:relative;" class="card">
-                            <p style="float:right;"><strong>Ingredients:</strong> <span ng-bind="hc.mealData[$index].ingredients"></span></p>
-
-                            <a class="button button-calm" style="float:left;" href="{{hc.mealData[$index].href}}" target="_blank">How to make it:</a>
+                        <div class="item item-divider">
+                            <h3 ng-bind="hc.mealData[$index].title" style="float:left;"></h3>
                         </div>
-
-                        <img ng-src="{{hc.mealData[$index].thumbnail}}" alt="" style="float:right;"/>
-
-
-
+                        <div class="item item-thumbnail-right">
+                            <img ng-src="{{hc.mealData[$index].thumbnail}}" alt="" style="float:right;"/>
+                            <div>
+                                <a class="button button-calm" href="{{hc.mealData[$index].href}}"
+                                   target="_blank">How to make it:</a>
+                            </div>
+                        </div>
+                        <div class="item item-divider item-text-wrap">
+                            <p style="float:right;"><strong>Ingredients:</strong> <span
+                                    ng-bind="hc.mealData[$index].ingredients"></span></p>
+                        </div>
                     </div>
                 </div>
 
