@@ -4,6 +4,5 @@
    "proxies": [{
    "path": "/api/recipes",
     "proxyUrl": "http://www.recipepuppy.com/api/"
-
   }]
 }

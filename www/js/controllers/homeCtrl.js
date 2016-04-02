@@ -22,8 +22,9 @@ function homeCtrl($http){
         document.getElementById("ingredientInput").value = '';
     }
     function searchItems(){
-        $http.get('/api/recipes/?i='+hc.inputs).success(function (data) {
-            hc.mealData = [];
+            $http.get('/api/recipes/?i='+hc.inputs).success(function (data) {
+                hc.mealData = [];
+            document.getElementById('searchItems').disabled = 'true';
             for(var i = 0; i < 10; i++){
 
                 hc.mealData.push(data.results[i]);
