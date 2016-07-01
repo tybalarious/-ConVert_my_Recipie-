@@ -10,7 +10,7 @@
                    ng-click="hc.deleteIngredients()"></a>
                 <label class="item item-input">
                     <div style="overflow: hidden; padding-right: .5em;">
-                        <input id="ingredientInput" type="text" placeholder="Type in your Ingredients"
+                        <input style="width:250px;" id="ingredientInput" type="text" placeholder="Type in your Ingredients"
                                ng-model="hc.theirIngredients" required>
                     </div>
                 </label>
@@ -18,14 +18,20 @@
                 <a  id="searchItems" class="button button-positive  button-block" ng-click="hc.searchItems()">Search Items</a>
                 <div ng-repeat="i in hc.mealData track by $index">
                     <div class="card">
-                    <div>
-                        <h3 ng-bind="hc.mealData[$index].title" style="float:left;"></h3>
-                                        </div><br>
-                        <!--<div style="float:left; position:relative;" class="card">-->
-                        <p  style="float:right;"><strong>Ingredients:</strong> <span class="button button-balanced"   ng-bind="hc.mealData[$index].ingredients"></span></p>
-                        <a class="button button-calm" style="float:left;" href="{{hc.mealData[$index].href}}" target="_blank">How to make it:</a>
+                        <div class="item item-text-wrap">
+                            <h3 ng-bind="hc.mealData[$index].title" style="float:left;"></h3>
                         </div>
-                        <img ng-src="{{hc.mealData[$index].thumbnail}}" alt="" style="float:right;"/>
+                        <!--<div style="float:left; position:relative;" class="card">-->
+                        <div class="item">
+                            <a class="button button-calm" style="float:left;" href="{{hc.mealData[$index].href}}" target="_blank">How to make it:</a>
+                            <div class="item-thumbnail-right">
+                                <img ng-src="{{hc.mealData[$index].thumbnail}}" alt="" style="float:right;"/>
+                            </div>
+                        </div>
+                        <div class="item item-divider item-text-wrap">
+                            <p><strong>Ingredients:</strong> <span ng-bind="hc.mealData[$index].ingredients"></span></p>
+                        </div>
+                        </div>
                     </div>
                 <!--</div>-->
 

@@ -1,8 +1,10 @@
 {
-   "name": "app",
-   "app_id": "",
-   "proxies": [{
-   "path": "/api/recipes",
-    "proxyUrl": "http://www.recipepuppy.com/api/"
-  }]
+  "name": "app",
+  "app_id": "0c330513",
+  "proxies": [
+    {
+      "path": "/api/recipes",
+      "proxyUrl": "http://www.recipepuppy.com/api/"
+    }
+  ]
 }

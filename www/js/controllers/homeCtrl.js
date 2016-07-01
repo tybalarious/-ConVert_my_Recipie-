@@ -23,7 +23,6 @@ function homeCtrl($http,$scope,$ionicPopup){
 
     function addMissingIngredients(theirAddedIngredients){
         hc.allAddedIngredients.push(theirAddedIngredients);
-        alert();
         document.getElementById('missing').value = '';
         $scope.$apply();
 
